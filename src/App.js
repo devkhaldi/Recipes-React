@@ -3,6 +3,11 @@ import './App.css';
 import Form from './components/Form';
 
 class App extends Component {
+  getRecipes = e => {
+    e.preventDefault() 
+    const recipeName = e.target.elements.recipeName.value
+    console.log(recipeName)
+  }
   render() {
     return (
       <div className="App">
@@ -10,7 +15,7 @@ class App extends Component {
           <h1 className="App-title">Recipe Search</h1>
         </header>
        
-        <Form />
+        <Form getRecipes={this.getRecipes} />
         
       </div>
     );
