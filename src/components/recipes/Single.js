@@ -2,22 +2,18 @@ import React from 'react'
 
 function Single({baseUri,recipe}) {
     return (
-        <div className="col-md-6">
-            <div className="card mb-3">
-                <div className="row no-gutters">
-                    <div className="col-md-4">
-                    <img src={`${baseUri}/${recipe.image}`} className="card-img" alt="..." />
+        <div className="col-md-4" >
+            <div className="recipes__box">
+                <img src={`${baseUri}/${recipe.image}`} alt="" />
+                <div className="recipe__text">
+                    <h4 className="recipe__text">
+                        {recipe.title.length > 20 ? `${recipe.title.substring(0,20)} ...` : recipe.title }
+                    </h4>
+                    <p className="recipes__subtitle">Ready in :  {recipe.readyInMinutes} minutes </p>
                 </div>
-                <div className="col-md-8">
-                    <div className="card-body">
-                        <h5 className="card-title">{recipe.title}</h5>
-                        <p className="card-text">{`${recipe.readyInMinutes} minutes`}</p>
-                        <button className="btn btn-secondary btn-sm">Show</button>  
-                    </div>
+                    <button className="recipe_buttons">Show informations</button>
                 </div>
             </div>
-            </div>
-        </div>
     )
 }
 

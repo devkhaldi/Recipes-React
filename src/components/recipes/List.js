@@ -5,9 +5,7 @@ function List({baseUri,recipes}) {
     return (
         <div className="container">
             <div className="row">
-                {
-                    recipes.map(recipe => <Single baseUri={baseUri} recipe={recipe} />)
-                }
+                { recipes.map(recipe => <Single baseUri={baseUri} recipe={recipe} key={recipe.id} />) }
             </div>
         </div>
     )
