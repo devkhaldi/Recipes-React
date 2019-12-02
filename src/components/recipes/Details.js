@@ -6,15 +6,28 @@ const API_KEY = "f3792d37f5b64c61bb4e585c489aac25"
 
 export class Details extends Component {
         state = {
-             recipe : {} 
+            recipe: {},
+            similarRecipes : []
         }
 
-    componentDidMount = () => {
+    getRecipeDetails = () => {
         const recipeId = this.props.match.params.id;
         const api_url = `https://api.spoonacular.com/recipes/${recipeId}/information?apiKey=${API_KEY}&includeNutrition=false`
         Axios.get(api_url).then(res => {
             console.log(res) 
         })
+    }
+
+    getSimilarRecipes = () => {
+        const recipeId = this.props.match.params.id;
+        const api_url = `https://api.spoonacular.com/recipes/${recipeId}/similar?apiKey=${API_KEY}`
+        Axios.get(api_url).then(res => {
+            console.log(res) 
+        })
+    }
+    
+    componentDidMount = () => {
+        this.getSimilarRecipes()
     }
 
     render() {
