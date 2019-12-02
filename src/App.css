@@ -45,13 +45,13 @@ button:focus {
 
 .recipes__box {
   background: #fff;
-  padding-bottom: 2rem;
+  padding-bottom: 10px;
   border-radius: 0px;
   /* box-shadow: -1px 2px 34px -13px rgba(0,0,0,0.75); */
   box-shadow: 0px 1px 2px #bbbbbb;
   text-align: left;
   overflow: hidden;
-  margin-bottom: 2rem;
+  margin-bottom: 10px;
 }
 
 .recipe__text {
@@ -157,4 +157,9 @@ input:-webkit-autofill {
   font-size: 1rem;
   text-transform: uppercase;
   font-weight: 500;
+}
+
+.col-md-4 {
+  padding-right: 4px ; 
+  padding-left: 4px ;
 }

@@ -13,7 +13,7 @@ class App extends Component {
   }
   getRecipes = e => {
     e.preventDefault() 
-    const recipeName = e.target.elements.recipeName.value
+    const recipeName = e.target.elements.recipeName.value;
     const api_url = `https://api.spoonacular.com/recipes/search?query=${recipeName}&apiKey=${API_KEY}`
     Axios.get(api_url).then(res => {
       this.setState({
@@ -33,7 +33,8 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Recipe Search</h1>
         </header>
-       
+
+        
         <Form getRecipes={this.getRecipes} />
         
         <List recipes={recipes} baseUri={baseUri}/>
